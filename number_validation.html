@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: greenyellow;
+        }
+        input[type=text]{
+            height: 28px;
+            width: 500px;
+            font-size: 22px;
+        }
+        button{
+            background-color: rgb(20, 18, 18);
+            border-radius: 10px;
+            color: white;
+            font-size: 20px;
+
+        }
+        p{
+            font-size: 30px;
+            color: blue;
+        }
+        h1{
+            font-size: 45px;
+            color: navy;
+            margin-top: 70px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Number Validation</h1>
+    <input type="text" id="number" placeholder="Enter Your Number"><br><br>
+    <button onclick="demo()">Click</button>
+    <p></p>
+</center>
+</body>
+<script>
+    function demo(){
+    var num=document.getElementById('number').value
+    var result = document.querySelector('p')
+
+    if(num.length == 10 )
+    {
+        result.innerHTML="Its True"
+    }
+    else{
+        result.innerHTML="Please Enter 10 Digit Valid Phone Number"
+    }
+}
+</script>
+</html>

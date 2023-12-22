@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #333;
+        }
+
+        #box {
+            height: 350px;
+            width: 1200px;
+            margin: 100px auto;
+        }
+
+        .a {
+            height: 250px;
+            width: 260px;
+            float: left;
+            background: white;
+            margin: 15px;
+            border: 20px groove yellow;
+            border-radius: 10px;
+            box-sizing: border-box;
+            box-shadow: 0px 0px 10px 10px rgb(134, 142, 94) inset;
+            font-size: 80px;
+            text-align: center;
+            line-height: 70px;
+            color: navy;
+            font-family: sans-serif;
+            padding: 30px;
+        }
+
+        h1 {
+            color: rgb(30, 223, 46);
+            text-align: center;
+            font-size: 80px;
+            font-family: sans-serif;
+        }
+
+        p {
+            font-size: 25px;
+        }
+
+        #btn {
+            color: aqua;
+            background-color: black;
+            font-size: 40px;
+            padding: 15px;
+            border-radius: 20px;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <h1>STOPWATCH</h1>
+        <div class="a">
+            <b id="h">00</b>
+            <p>HOURS</p>
+        </div>
+        <div  class="a">
+            <b id="m">00</b>
+            <p>MINUTES</p>
+        </div>
+        <div class="a">
+            <b id="s">00</b>
+            <p>SECOND</p>
+        </div>
+        <div  class="a">
+            <b id="ms">00</b>
+            <p>ML SECOND</p>
+        </div>
+    </div>
+<center><input type="button" value="START" id="btn" onclick="start(this)"></center>
+
+
+    <script>
+        var h = 0;
+        var m = 0; 
+        var s = 0;
+        var ms = 0;
+
+        function stopwatch(){
+    
+        var hh=document.getElementById("h")
+        var mm=document.getElementById("m")
+        var ss=document.getElementById("s")
+        var mls=document.getElementById("ms")
+        ms++
+        if(ms==200)
+        {
+            ms=0
+            s++;
+            if(s==60)
+            {
+                s=0
+                m++;
+                if(m==60)
+                {
+                    m=0
+                    h++;
+                }
+            }
+        }
+        if(h<10)        
+        hh.innerText="0"+h;        
+        else       
+        hh.innerText=h;
+        if(m<10)        
+        mm.innerText="0"+m;        
+        else       
+        mm.innerText=m;
+        if(s<10)        
+        ss.innerText="0"+s;        
+        else       
+        ss.innerText=s;
+        if(ms<10)        
+        mls.innerText="00"+ms;        
+        else       
+        mls.innerText=ms;
+        
+        }
+        function start(x)
+        {
+            if(x.value=="START")
+            {
+                x.value="STOP"
+                x.style.background="green"
+                x.style.color= "white"
+                a=setInterval(stopwatch,1)
+
+            }
+            else
+            {
+                x.value="START"
+                x.style.background="red"
+                x.style.color= "white"
+                clearInterval(a)
+            }
+    }
+    </script>
+</body>
+
+</html>

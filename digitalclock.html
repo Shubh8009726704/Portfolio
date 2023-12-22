@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{background-color: #333;}
+        #box
+        {
+            height: 300px;
+            width: 900px;
+            margin: 100px auto;
+        }
+        .a{
+            height: 250px;
+            width: 250px;
+            float: left;
+            background: white;
+            margin: 25px;
+            border: 30px groove red;
+            border-radius: 50%;
+            box-sizing: border-box;
+            box-shadow: 0px 0px 10px 10px blue inset;
+            font-size: 80px;
+            text-align: center;
+            line-height: 190px;
+            color: navy;
+            font-family: sans-serif;
+        }
+        h1{
+            color: rgb(30, 223, 46);
+            text-align: center;
+            font-size: 80px;
+        }
+    </style>
+</head>
+<body onload="digiclock()">
+    <div id="box">
+        <h1>DIGITAL CLOCK</h1>
+        <div id="h" class="a">HH</div>
+        <div id="m" class="a">MM</div>
+        <div id="s" class="a">SS</div>
+    </div>
+
+
+    <script>
+        function digiclock(){
+        var time = new Date();
+
+        document.getElementById("h").innerHTML=time.getHours()
+        document.getElementById("m").innerHTML=time.getMinutes()
+        document.getElementById("s").innerHTML=time.getSeconds()
+        }
+        setInterval(digiclock,1000)
+    </script>
+</body>
+</html>
